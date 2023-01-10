@@ -15,7 +15,7 @@ int main (int argc, char **argv)
     cAddr->sin_addr.s_addr = 0;
     sockaddr_in * sAddr = new (sockaddr_in);
     sAddr->sin_family = AF_INET;
-    sAddr->sin_port = htons(13);
+    sAddr->sin_port = htons(7);
     sAddr->sin_addr.s_addr = inet_addr("172.16.40.1");
     char *buf = new char[512];
     string str ("/0");
