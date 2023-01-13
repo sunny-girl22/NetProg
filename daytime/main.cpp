@@ -16,13 +16,13 @@ int main (int argc, char **argv)
     sockaddr_in * sAddr = new (sockaddr_in);
     sAddr->sin_family = AF_INET;
     sAddr->sin_port = htons(7);
-    sAddr->sin_addr.s_addr = inet_addr("172.16.40.1");
+    sAddr->sin_addr.s_addr = inet_addr("172.16.40.194");
     char *buf = new char[512];
     string str ("/0");
     int msgLen = str.length();
     size_t length = str.copy(buf,msgLen);
-    int Socket = socket(AF_INET, SOCK_DGRAM, 0);
-    if (Socket == -1) {
+    int s = socket(AF_INET, SOCK_DGRAM, 0);
+    if (s == -1) {
         exit(1);
     }
     int rc = connect(s,(const sockaddr*)srv_addr, sizeof(sockaddr_in));
